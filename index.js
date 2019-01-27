@@ -65,7 +65,7 @@ app.get('/items/:id', (req, res) => {
 
 app.delete('/items/:id', (req, res) => {
     Item
-        .findByIdAndRemove(req.params.id)
+        .findOneAndDelete(req.params.id)
         .then(result => {
             res.status(204).end()
         })
